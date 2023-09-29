@@ -1,0 +1,12 @@
+
+section{
+    margin: 2rem;
+}
+p{
+    font-size: 2rem;
+}
+.letter-sum{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

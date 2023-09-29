@@ -1,0 +1,81 @@
+<article id="details" class="card poke-details">
+    <div class="card-header">
+        <p>
+            <span># {{pokemon?.id}}</span>
+            
+            {{pokemon?.name}}
+
+            <!-- TODO Usar redux para guardar favorito -->
+            <i *ngIf="pokemon" (click)="changeFavorite(pokemon)" class="fa-solid fa-star"></i>
+        </p>
+        <ul class="pokemon-types">
+            <li *ngFor="let type of pokemon?.types">
+                <img [src]="'assets/type-icons/' + type?.type?.name + '.svg'" 
+                    alt="{{pokemon?.name}}" 
+                    width="25px">  
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <img 
+        [src]="pokemon?.sprites?.front_default" 
+        alt="{{pokemon?.name}}" 
+        width="300px">
+
+    </div>
+    
+    <div class="card-footer">
+        <p>Pokedex #: {{pokemon?.id}}</p>
+        <hr>
+        <p>Nombre: {{pokemon?.name}}</p>
+        <hr>
+        <ul>
+            <p>Habilidades: </p>
+            <li *ngFor="let ability of pokemon?.abilities">
+                {{ ability?.ability?.name }}
+                <hr>
+            </li>
+        </ul>
+        <ul>
+            <p>Formas: </p>
+            <li *ngFor="let form of pokemon?.forms">
+                {{ form?.name }}
+                <hr>
+            </li>
+        </ul>
+        <ul>
+            <p>Juegos: </p>
+            <li *ngFor="let game of pokemon?.game_indices">
+                {{ game?.version?.name }}
+                <hr>
+            </li>
+        </ul>
+        <p>Altura: {{pokemon?.height}} m</p>
+        <hr>
+        <p>Peso: {{pokemon?.weight}} kg</p>
+        <hr>
+        <!-- <p>Ubicaciones: {{ pokemon?.location_area_encounters }}</p>
+         -->
+        <ul>
+            <p>Movimientos: </p>
+            <li *ngFor="let move of pokemon?.moves">
+                {{ move?.move?.name }}
+                <hr>
+            </li>
+        </ul>
+        <ul><!-- Widget sonar stats -->
+            <p>Estadisticas: </p>
+            <li *ngFor="let stat of pokemon?.stats">
+                {{ stat?.stat?.name }}: {{stat?.base_stat}}
+                <hr>
+            </li>
+        </ul>
+        <ul>
+            <p>Tipos: </p>
+            <li *ngFor="let type of pokemon?.types">
+                {{ type?.type?.name }} 
+                <hr>
+            </li>
+        </ul>
+    </div>
+</article>

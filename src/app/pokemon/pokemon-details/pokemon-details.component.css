@@ -1,0 +1,45 @@
+
+.poke-details{
+    background-color: #E64C3C;
+    color: white;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 2rem;
+
+}
+.card-header > p{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+}
+.pokemon-types{
+    list-style: none;
+    display: flex;
+    gap: .5rem;
+    padding: 0 2rem 1rem;
+}
+
+
+.card-body{
+    margin: auto;
+    background-color: white;
+}
+
+.card-footer{
+    font-size: 1.6rem;
+    margin: auto 2rem;
+}
+.card-footer ul li{
+    text-align: right;
+    display: none;
+}
+.card-footer p:hover{
+    background-color: #e64d3c69;
+}

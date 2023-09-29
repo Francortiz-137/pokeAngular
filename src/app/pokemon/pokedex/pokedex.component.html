@@ -1,0 +1,73 @@
+<div class="container">
+    <h2>Listado de Pokémon</h2>
+
+    <div class="search">
+        <input type="text" 
+                placeholder="Buscar pokémon..." 
+                class="form-control"
+                #txtSearch
+                (keyup)="autoCompleteSearch(txtSearch.value)">
+        <button class="btn btn-primary"
+                (click)="searchPokemon(txtSearch.value)"
+        >Buscar</button>
+    </div>
+
+    <!-- TODO limitar las sugerencias a 5 o 3-->
+    <ul class="suggestion-list" *ngIf="showSuggestions">
+        <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+        {{ suggestion.name }}
+        </li>
+    </ul>
+
+    <div class="pag-buttons">
+
+        <button class="btn btn-primary" (click)="firstPage()">
+            &lt;&lt; Inicio
+        </button>
+
+        <button class="btn btn-primary" (click)="prevPage()">
+            &lt; Prev
+        </button>
+
+        <!-- botones para seleccionar el numero de pagina -->
+
+        <button class="btn btn-primary"  (click)="nextPage()"
+            [disabled]="(pokemons | filtro:page:search).length === 0">
+            Sig &gt;
+        </button>
+
+        <button class="btn btn-primary" (click)="lastPage()">
+            Final &gt;&gt;
+        </button>
+
+    </div>
+</div>
+
+
+
+<section class="pokedex">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Sprite</td>
+                <td>Nombre</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  (click)="selectPokemon(poke)" *ngFor="let poke of pokemons | filtro:page:search">
+                
+                    <td><a href="#details"> {{poke.id}}</a></td>
+                    <td><a href="#details"> <img [src]="poke.sprite" [alt]="poke.name" [ngStyle]="{'width':'75px'}"></a></td>
+                    <td><a href="#details"> {{poke.name}}</a></td>
+                
+               
+            </tr>
+            <p *ngIf="(pokemons | filtro:page:search).length === 0"> No hay mas resultados</p>
+        </tbody>
+    </table>
+    
+    <app-pokemon-details [pokemon]="selectedPokemon" *ngIf="selectedPokemon!==null"></app-pokemon-details>
+    
+</section>
+<app-summary [pokes]="pokemons"></app-summary>

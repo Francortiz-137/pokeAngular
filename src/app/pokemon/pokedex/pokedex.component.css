@@ -1,0 +1,65 @@
+
+div.container{
+    margin: 5rem 0;
+}
+
+section{
+    margin: 1rem;
+}
+
+h2{
+    text-align: center;
+}
+
+thead{
+    font-size: 1.6rem;
+}
+
+
+a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: black;
+    margin: auto;
+}
+
+.suggestion-list{
+    max-height: 20rem;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+.suggestion-list li{
+    padding: 2rem 1.5rem; 
+    font-size: 1.6rem;
+    
+}
+.search{
+    display: flex;
+    padding: 2rem;
+}
+
+.search input{
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+.search button{
+    padding: 0 2rem;
+    font-size: 1.6rem;
+}
+
+.pag-buttons{
+    display: flex;
+    justify-content: center;
+    gap:.5rem;
+    margin: 2rem 0;
+}
+
+.pag-buttons> button{
+    font-size: 1.6rem;
+}
+
+.pokedex{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,11 @@
+
+<section>
+    <h2>Resumen</h2>
+    <h3># Pokemon por letra</h3>
+    <ul>
+    <li class="letter-sum" *ngFor="let letter of alphabet">
+        <p>{{letter}}</p>
+        <p>{{countByLetter(letter)}}</p>
+    </li>
+    </ul>
+</section>
