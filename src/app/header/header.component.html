@@ -5,12 +5,18 @@
     </div>    
 
     <div>
-        <p *ngIf="pokeFav?.id === 0">
-        Selecciona un pokemon como favorito!
-        </p>
-        <p *ngIf="pokeFav?.id !== 0">
-            {{ pokeFav?.name}}
+        <div class="favorite" *ngIf="pokeFav?.id === 0">
+            <p >Selecciona un pokemon como favorito!</p>
+        </div>
+       
+        <div class="favorite favorite-active" *ngIf="pokeFav?.id !== 0" (click)="openModalDetails()">
             <i class="fa-solid fa-star"></i>
-        </p>
-    </div>
+            <p>{{ pokeFav?.name}}</p>
+            <img
+                    [src]="pokeFav?.sprites?.front_default" 
+                    alt="{{pokeFav?.name}}" 
+                    width="75px"> 
+        </div>
+        
+    </div >
 </nav>

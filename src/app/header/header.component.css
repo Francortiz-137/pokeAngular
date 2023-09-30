@@ -8,11 +8,27 @@
     padding: 1rem 0;
 }
 
-p{
+div.favorite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     color: white;
     border: 1px solid white;
+    background-color: inherit;
     padding: 1rem 2rem;
     border-radius: 8px;
     font-size: 1.6rem;
     margin: 0 2rem;
+}
+.favorite-active{
+    cursor: pointer;
+}
+
+p{
+    margin: 0;
+}
+
+i{
+    color: white;
 }

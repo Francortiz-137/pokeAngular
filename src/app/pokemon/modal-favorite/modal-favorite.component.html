@@ -1,0 +1,69 @@
+<div class="modal-header">
+	<h4 class="modal-title">#{{pokemon?.id}}: Nombre: {{pokemon?.name}}</h4>
+	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true" class="fa-solid fa-times"></span>
+      </button>
+</div>
+<div class="modal-body">
+	<div class="card lesson-border">
+		<img class="card-img-top" 
+        [src]="pokemon?.sprites?.front_default" 
+        alt="{{pokemon?.name}}" 
+        width="300px"> 
+		<div class="card-body">
+            
+            <hr>
+            <ul>
+                <p>Habilidades: </p>
+                <li *ngFor="let ability of pokemon?.abilities">
+                    {{ ability?.ability?.name }}
+                    <hr>
+                </li>
+            </ul>
+            <ul>
+                <p>Formas: </p>
+                <li *ngFor="let form of pokemon?.forms">
+                    {{ form?.name }}
+                    <hr>
+                </li>
+            </ul>
+            <ul>
+                <p>Juegos: </p>
+                <li *ngFor="let game of pokemon?.game_indices">
+                    {{ game?.version?.name }}
+                    <hr>
+                </li>
+            </ul>
+            <p>Altura: {{pokemon?.height}} m</p>
+            <hr>
+            <p>Peso: {{pokemon?.weight}} kg</p>
+            <hr>
+            <!-- <p>Ubicaciones: {{ pokemon?.location_area_encounters }}</p>
+             -->
+            <ul>
+                <p>Movimientos: </p>
+                <li *ngFor="let move of pokemon?.moves">
+                    {{ move?.move?.name }}
+                    <hr>
+                </li>
+            </ul>
+            <ul><!-- Widget sonar stats -->
+                <p>Estadisticas: </p>
+                <li *ngFor="let stat of pokemon?.stats">
+                    {{ stat?.stat?.name }}: {{stat?.base_stat}}
+                    <hr>
+                </li>
+            </ul>
+            <ul>
+                <p>Tipos: </p>
+                <li *ngFor="let type of pokemon?.types">
+                    {{ type?.type?.name }} 
+                    <hr>
+                </li>
+            </ul>
+        </div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cerrar</button>
+</div>

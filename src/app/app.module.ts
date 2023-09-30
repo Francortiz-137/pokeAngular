@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoreModule } from '@ngrx/store';
 import { pokemonReducer } from './pokemon/pokemon.reducer';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { pokemonReducer } from './pokemon/pokemon.reducer';
     BrowserModule,
     HttpClientModule,
     PokemonModule,
-    StoreModule.forRoot({pokeFav: pokemonReducer}, {})
+    StoreModule.forRoot({pokeFav: pokemonReducer}, {}),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

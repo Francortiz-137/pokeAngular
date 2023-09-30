@@ -4,6 +4,7 @@ import { PokedexComponent } from './pokedex/pokedex.component';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { SummaryComponent } from './summary/summary.component';
+import { ModalFavoriteComponent } from './modal-favorite/modal-favorite.component';
 
 
 
@@ -13,6 +14,7 @@ import { SummaryComponent } from './summary/summary.component';
     FiltroPipe,
     PokemonDetailsComponent,
     SummaryComponent,
+    ModalFavoriteComponent,
   ],
   imports: [
     CommonModule
