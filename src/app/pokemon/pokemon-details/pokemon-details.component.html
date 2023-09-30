@@ -17,66 +17,89 @@
             </li>
         </ul>
     </div>
-    <div class="card-body">
-        <img 
-        [src]="pokemon?.sprites?.front_default" 
-        alt="{{pokemon?.name}}" 
-        width="300px">
-
-    </div>
     
+    <div class="card-body">
+        <div class="pokedex-screen">
+            <img 
+            class="card-img-top mx-auto" 
+            [src]="pokemon?.sprites?.front_default" 
+            alt="{{pokemon?.name}}" 
+            >
+        </div>
+        
+        <div class="poke-info">
+            <p>Altura: {{pokemon?.height}} m</p>
+            <hr>
+            <p>Peso: {{pokemon?.weight}} kg</p>
+            <hr>
+            <div class="scroll">
+                <h6>Habilidades:</h6>
+                <ul>
+                    <li *ngFor="let ability of pokemon?.abilities">
+                        {{ ability?.ability?.name }}
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="scroll">
+                <h6>Formas: </h6>
+                 <ul>
+                    <li *ngFor="let form of pokemon?.forms">
+                        {{ form?.name }}
+                        
+                    </li>
+                </ul>
+            </div>
+           <hr>
+           <div class="scroll">
+                <h6>Juegos: </h6>
+                <ul>
+                    
+                    <li *ngFor="let game of pokemon?.game_indices">
+                        {{ game?.version?.name }}
+                        <hr>
+                    </li>
+                </ul>
+           </div>
+           <hr>
+            <div class="scroll">
+                <h6>Movimientos: </h6>
+                <ul>
+                
+                <li *ngFor="let move of pokemon?.moves">
+                    {{ move?.move?.name }}
+                    <hr>
+                </li>
+            </ul>
+            </div>
+            <hr>
+            <ul><!-- Widget sonar stats -->
+                <p>Estadisticas: </p>
+                <li *ngFor="let stat of pokemon?.stats">
+                    {{ stat?.stat?.name }}: {{stat?.base_stat}}
+                    <hr>
+                </li>
+            </ul>
+            <hr>
+            <div class="pokemon-types-list">
+                <h6>Tipos: </h6>
+                <ul>
+                    <li *ngFor="let type of pokemon?.types">
+                        {{ type?.type?.name }} 
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+
     <div class="card-footer">
-        <p>Pokedex #: {{pokemon?.id}}</p>
-        <hr>
-        <p>Nombre: {{pokemon?.name}}</p>
-        <hr>
-        <ul>
-            <p>Habilidades: </p>
-            <li *ngFor="let ability of pokemon?.abilities">
-                {{ ability?.ability?.name }}
-                <hr>
-            </li>
-        </ul>
-        <ul>
-            <p>Formas: </p>
-            <li *ngFor="let form of pokemon?.forms">
-                {{ form?.name }}
-                <hr>
-            </li>
-        </ul>
-        <ul>
-            <p>Juegos: </p>
-            <li *ngFor="let game of pokemon?.game_indices">
-                {{ game?.version?.name }}
-                <hr>
-            </li>
-        </ul>
-        <p>Altura: {{pokemon?.height}} m</p>
-        <hr>
-        <p>Peso: {{pokemon?.weight}} kg</p>
-        <hr>
-        <!-- <p>Ubicaciones: {{ pokemon?.location_area_encounters }}</p>
-         -->
-        <ul>
-            <p>Movimientos: </p>
-            <li *ngFor="let move of pokemon?.moves">
-                {{ move?.move?.name }}
-                <hr>
-            </li>
-        </ul>
-        <ul><!-- Widget sonar stats -->
-            <p>Estadisticas: </p>
-            <li *ngFor="let stat of pokemon?.stats">
-                {{ stat?.stat?.name }}: {{stat?.base_stat}}
-                <hr>
-            </li>
-        </ul>
-        <ul>
-            <p>Tipos: </p>
-            <li *ngFor="let type of pokemon?.types">
-                {{ type?.type?.name }} 
-                <hr>
-            </li>
-        </ul>
+        <button class="btn btn-info">
+            <i class="fa-solid fa-caret-left"></i>
+        </button>
+        <button class="btn btn-info">
+            <i class="fa-solid fa-caret-right"></i>
+        </button>
     </div>
 </article>

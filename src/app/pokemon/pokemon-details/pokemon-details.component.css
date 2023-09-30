@@ -9,7 +9,6 @@
 .card-header{
     display: flex;
     flex-direction: column;
-    
     font-size: 2rem;
 
 }
@@ -28,22 +27,54 @@
     padding: 0 2rem 1rem;
 }
 
-
 .card-body{
-    margin: auto;
-    background-color: white;
-}
-
-.card-footer{
     font-size: 1.6rem;
     margin: 2rem;
 }
-.card-footer ul li{
-    text-align: right;
-    display: none;
+
+.card-body img{
+    background-color: white;
 }
-.card-footer p:hover{
-    background-color: #e64d3c69;
+
+h6{
+    font-size: 1.6rem;
+}
+
+.scroll{
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pokemon-types-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pokemon-types-list ul{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.poke-info{
+    margin-top: 2rem;
+}
+
+.card-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.card-footer button{
+    background-color: inherit;
+    border: none;
+    color: black;
+    font-size: 3rem;
+    margin: 0 2rem;
 }
 
 @media (min-width: 769px) {
@@ -53,3 +84,4 @@
         width: max(500px,40vw);
     }
 }
+

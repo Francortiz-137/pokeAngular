@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { PokemonService } from '../services/pokemon.service';
 import { Pokemon, PokemonDetails } from '../interfaces/pokemon.interfaces';
 import { Action, Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducers';
@@ -16,13 +15,12 @@ export class PokemonDetailsComponent {
 
   pokeFav?: PokemonDetails;
 
+
   constructor(private store: Store<AppState>){
     this.store.select('pokeFav').subscribe( pokeFav => {
       this.pokeFav = pokeFav;
     });
   }
-
-
 
   addFavorite(newFav:PokemonDetails){
 
@@ -34,4 +32,5 @@ export class PokemonDetailsComponent {
     this.store.dispatch( removeFavoriteAction() );
 
   } 
+
 }
