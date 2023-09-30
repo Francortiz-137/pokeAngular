@@ -5,9 +5,10 @@
             
             {{pokemon?.name}}
 
-            <!-- TODO Usar redux para guardar favorito -->
-            <i *ngIf="pokemon" (click)="changeFavorite(pokemon)" class="fa-solid fa-star"></i>
+            <i *ngIf="pokeFav?.id !== 0 && pokeFav?.id === pokemon?.id" (click)="removeFavorite()" class="fa-solid fa-star"></i>
+            <i *ngIf="pokemon && (pokeFav?.id ===0 || pokeFav?.id !== pokemon?.id)" (click)="addFavorite(pokemon)" class="fa-regular fa-star"></i>
         </p>
+
         <ul class="pokemon-types">
             <li *ngFor="let type of pokemon?.types">
                 <img [src]="'assets/type-icons/' + type?.type?.name + '.svg'" 

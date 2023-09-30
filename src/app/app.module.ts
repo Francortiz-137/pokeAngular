@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { StoreModule } from '@ngrx/store';
+import { pokemonReducer } from './pokemon/pokemon.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    PokemonModule
+    PokemonModule,
+    StoreModule.forRoot({pokeFav: pokemonReducer}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]

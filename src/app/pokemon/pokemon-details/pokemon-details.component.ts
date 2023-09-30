@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
-import { PokemonDetails } from '../interfaces/pokemon.interfaces';
+import { Pokemon, PokemonDetails } from '../interfaces/pokemon.interfaces';
+import { Action, Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducers';
+import { addFavoriteAction, removeFavoriteAction,/*  RemoveFavoriteAction */ } from '../pokemon.actions';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -10,17 +13,25 @@ import { PokemonDetails } from '../interfaces/pokemon.interfaces';
 export class PokemonDetailsComponent {
 
   @Input() pokemon?:PokemonDetails;
-  favPokemon?: PokemonDetails;
-  constructor(pokemonService:PokemonService){}
 
+  pokeFav?: PokemonDetails;
 
-  changeFavorite(newFav:PokemonDetails){
-    if(this.favPokemon !== newFav){
-      this.favPokemon = newFav;
-      console.log(`Tu pokemon favorito es ahora ${this.favPokemon.name}`);
-    }else{
-      this.favPokemon = undefined;
-      console.log(`Se ha quitado el favorito`);
-    }
+  constructor(private store: Store<AppState>){
+    this.store.select('pokeFav').subscribe( pokeFav => {
+      this.pokeFav = pokeFav;
+    });
   }
+
+
+
+  addFavorite(newFav:PokemonDetails){
+
+   const props = {pokeFav: newFav}
+    this.store.dispatch( addFavoriteAction(props));
+  }
+
+   removeFavorite(){
+    this.store.dispatch( removeFavoriteAction() );
+
+  } 
 }

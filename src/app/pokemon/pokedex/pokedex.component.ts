@@ -67,7 +67,6 @@ export class PokedexComponent {
         this.selectedPokemon = pokemon;
         this.selectedPokemon.height /= 10;
         this.selectedPokemon.weight /= 10;
-        console.log(pokemon);
       });
     }
 }

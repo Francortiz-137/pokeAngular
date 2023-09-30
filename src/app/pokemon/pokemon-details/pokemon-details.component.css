@@ -2,6 +2,8 @@
 .poke-details{
     background-color: #E64C3C;
     color: white;
+    border-radius: 12px;
+    border: 1.5px solid black;
 }
 
 .card-header{
@@ -34,7 +36,7 @@
 
 .card-footer{
     font-size: 1.6rem;
-    margin: auto 2rem;
+    margin: 2rem;
 }
 .card-footer ul li{
     text-align: right;
@@ -42,4 +44,12 @@
 }
 .card-footer p:hover{
     background-color: #e64d3c69;
+}
+
+@media (min-width: 769px) {
+    
+    .poke-details{
+        
+        width: max(500px,40vw);
+    }
 }

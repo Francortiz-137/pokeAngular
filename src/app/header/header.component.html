@@ -3,4 +3,14 @@
         <img src="assets/logo/logo-primary.svg" alt="pokeball" width="35px">
         <h1>PokeAngular</h1>
     </div>    
+
+    <div>
+        <p *ngIf="pokeFav?.id === 0">
+        Selecciona un pokemon como favorito!
+        </p>
+        <p *ngIf="pokeFav?.id !== 0">
+            {{ pokeFav?.name}}
+            <i class="fa-solid fa-star"></i>
+        </p>
+    </div>
 </nav>

@@ -1,6 +1,7 @@
 
 section{
     margin: 2rem;
+    text-align: center;
 }
 p{
     font-size: 2rem;
@@ -8,5 +9,8 @@ p{
 .letter-sum{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 10rem;
 }

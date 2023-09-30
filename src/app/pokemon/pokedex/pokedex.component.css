@@ -63,3 +63,9 @@ a{
     display: flex;
     flex-direction: column;
 }
+
+@media (min-width: 769px){
+    .pokedex{
+        flex-direction: row;
+    }
+}
