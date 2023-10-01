@@ -27,7 +27,6 @@ export const initialState: PokemonDetails = {
 export const pokemonReducer = createReducer(
     initialState,
     on(addFavoriteAction, (state, {pokeFav})=> {
-        console.log(state);
         return { ...pokeFav};
     }), 
     on(removeFavoriteAction, (state)=> {

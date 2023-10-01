@@ -12,7 +12,6 @@
         >Buscar</button>
     </div>
 
-    <!-- TODO limitar las sugerencias a 5 o 3-->
     <ul class="suggestion-list" *ngIf="showSuggestions">
         <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
         {{ suggestion.name }}
@@ -28,8 +27,6 @@
         <button class="btn btn-primary" (click)="prevPage()">
             &lt; Prev
         </button>
-
-        <!-- botones para seleccionar el numero de pagina -->
 
         <button class="btn btn-primary"  (click)="nextPage()"
             [disabled]="(pokemons | filtro:page:search).length === 0">

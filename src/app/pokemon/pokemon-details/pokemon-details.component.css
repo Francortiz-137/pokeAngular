@@ -32,17 +32,39 @@
     margin: 2rem;
 }
 
-.card-body img{
+.pokedex-screen{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 90%;
+    margin: auto;
+    background-color: black;
+    border-radius: 16px;
+    height: 350px;
+}
+
+.pokedex-screen .pokemon-img{
     background-color: white;
+    height: min(300px,90%);
+    border-radius: 18px;
 }
 
 h6{
     font-size: 1.6rem;
+    font-weight: 700;
 }
 
 .scroll{
-    max-height: 200px;
+    max-height: 150px;
     overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scroll-item{
+    flex: 1;
+}
+.pokemon-stats{
     display: flex;
     justify-content: space-between;
 }
@@ -62,14 +84,14 @@ h6{
     margin-top: 2rem;
 }
 
-.card-footer{
+.pokedex-nav-btns{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 
-.card-footer button{
+.pokedex-nav-btns button{
     background-color: inherit;
     border: none;
     color: black;
@@ -84,4 +106,3 @@ h6{
         width: max(500px,40vw);
     }
 }
-

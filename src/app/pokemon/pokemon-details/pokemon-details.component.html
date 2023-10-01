@@ -17,43 +17,60 @@
             </li>
         </ul>
     </div>
-    
+    <div class="pokedex-nav-btns">
+        <button class="btn btn-info" (click)="prevPokemon()">
+            <i class="fa-solid fa-caret-left"></i>
+        </button>
+        <button class="btn btn-info"  (click)="nextPokemon()">
+            <i class="fa-solid fa-caret-right"></i>
+        </button>
+    </div>
+    <div class="card-body pokedex-screen">
+        <img 
+        class="pokemon-img" 
+        [src]="pokemon?.sprites?.front_default" 
+        alt="{{pokemon?.name}}" 
+        >
+    </div>
+        <hr>
     <div class="card-body">
-        <div class="pokedex-screen">
-            <img 
-            class="card-img-top mx-auto" 
-            [src]="pokemon?.sprites?.front_default" 
-            alt="{{pokemon?.name}}" 
-            >
-        </div>
-        
         <div class="poke-info">
-            <p>Altura: {{pokemon?.height}} m</p>
-            <hr>
-            <p>Peso: {{pokemon?.weight}} kg</p>
+            <div class="scroll">
+                <p class="scroll-item">Altura:</p>
+                <p class="scroll-item">{{pokemon?.height}} m</p>
+            </div>
+          
             <hr>
             <div class="scroll">
-                <h6>Habilidades:</h6>
-                <ul>
+                <p class="scroll-item">Peso:</p>
+                <p class="scroll-item">{{pokemon?.weight}} kg</p>
+            </div>
+            
+            <hr>
+            <div class="scroll">
+                <h6  class="scroll-item">Habilidades:</h6>
+                <ul  class="scroll-item">
                     <li *ngFor="let ability of pokemon?.abilities">
                         {{ ability?.ability?.name }}
                     </li>
                 </ul>
             </div>
             <hr>
-            <div class="scroll">
-                <h6>Formas: </h6>
-                 <ul>
-                    <li *ngFor="let form of pokemon?.forms">
-                        {{ form?.name }}
-                        
+           <div class="pokemon-stats">
+                <div class="scroll-item">
+                    <h6>Estadisticas: </h6>
+                </div>
+                <ul class="scroll-item">
+                    <li *ngFor="let stat of pokemon?.stats">
+                        {{ stat?.stat?.name }}: {{stat?.base_stat}}
+                        <hr>
                     </li>
-                </ul>
+                </ul>       
             </div>
-           <hr>
+            <hr>
            <div class="scroll">
-                <h6>Juegos: </h6>
-                <ul>
+                <h6  class="scroll-item">Juegos: </h6>
+                <ul  class="scroll-item">
                     
                     <li *ngFor="let game of pokemon?.game_indices">
                         {{ game?.version?.name }}
@@ -63,8 +80,8 @@
            </div>
            <hr>
             <div class="scroll">
-                <h6>Movimientos: </h6>
-                <ul>
+                <h6  class="scroll-item">Movimientos: </h6>
+                <ul  class="scroll-item">
                 
                 <li *ngFor="let move of pokemon?.moves">
                     {{ move?.move?.name }}
@@ -73,32 +90,22 @@
             </ul>
             </div>
             <hr>
-            <ul><!-- Widget sonar stats -->
-                <p>Estadisticas: </p>
-                <li *ngFor="let stat of pokemon?.stats">
-                    {{ stat?.stat?.name }}: {{stat?.base_stat}}
-                    <hr>
-                </li>
-            </ul>
-            <hr>
             <div class="pokemon-types-list">
-                <h6>Tipos: </h6>
-                <ul>
+                <h6  class="scroll-item">Tipos: </h6>
+                <ul  class="scroll-item">
                     <li *ngFor="let type of pokemon?.types">
                         {{ type?.type?.name }} 
                     </li>
                 </ul>
             </div>
-            
         </div>
-        
     </div>
 
-    <div class="card-footer">
-        <button class="btn btn-info">
+    <div class="card-footer pokedex-nav-btns">
+        <button class="btn btn-info" (click)="prevPokemon()">
             <i class="fa-solid fa-caret-left"></i>
         </button>
-        <button class="btn btn-info">
+        <button class="btn btn-info"  (click)="nextPokemon()">
             <i class="fa-solid fa-caret-right"></i>
         </button>
     </div>

@@ -6,22 +6,20 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
 import { SummaryComponent } from './summary/summary.component';
 import { ModalFavoriteComponent } from './modal-favorite/modal-favorite.component';
 
-
-
 @NgModule({
-  declarations: [
-    PokedexComponent,
-    FiltroPipe,
-    PokemonDetailsComponent,
-    SummaryComponent,
-    ModalFavoriteComponent,
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    PokedexComponent,
-    PokemonDetailsComponent
-  ]
+    declarations: [
+        PokedexComponent,
+        FiltroPipe,
+        PokemonDetailsComponent,
+        SummaryComponent,
+        ModalFavoriteComponent
+    ],
+    exports: [
+        PokedexComponent,
+        PokemonDetailsComponent
+    ],
+    imports: [
+        CommonModule,
+    ]
 })
 export class PokemonModule { }

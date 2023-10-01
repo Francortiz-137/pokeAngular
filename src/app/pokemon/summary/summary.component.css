@@ -1,11 +1,30 @@
-
 section{
     margin: 2rem;
     text-align: center;
 }
+
 p{
     font-size: 2rem;
+    margin: 1rem;
 }
+
+h2{
+    margin-top: 5rem;
+}
+
+h3{
+    margin: 2rem 0;
+}
+
+.summary{
+    width: min(90%,500px);
+    margin: auto;
+}
+
+ul{
+    border: 1px solid #f0f0f0;
+}
+
 .letter-sum{
     display: flex;
     flex-direction: row;
@@ -13,4 +32,17 @@ p{
     align-items: center;
     text-align: left;
     gap: 10rem;
+    border: 1px solid lightgray;
 }
+
+.sum-item{
+    flex: 1;
+}
+
+.letter{
+    padding-left: 5rem;
+}
+
+ul li:nth-child(even) {
+    background-color: #f0f0f0; /* Gray background for odd-positioned li elements */
+  }

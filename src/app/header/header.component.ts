@@ -21,8 +21,6 @@ export class HeaderComponent {
 
   closeResult: string = '';
 
-  
-
   openModalDetails() {
 
     this.modalService.open(ModalFavoriteComponent, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -36,9 +34,6 @@ export class HeaderComponent {
     });
 
   }
-
-  
-
   private getDismissReason(reason: any): string {
 
     if (reason === ModalDismissReasons.ESC) {

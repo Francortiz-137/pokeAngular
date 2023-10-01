@@ -7,8 +7,7 @@ import { Pokemon } from '../interfaces/pokemon.interfaces';
 export class FiltroPipe implements PipeTransform {
 
   transform(pokemons: Pokemon[], page: number = 0, search: string= '') : Pokemon[] {
-    
-    console.log(search)
+  
     if(search.length === 0) 
       return pokemons.slice(page,page+10);
     
