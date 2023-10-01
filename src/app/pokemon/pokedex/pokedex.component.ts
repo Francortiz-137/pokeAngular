@@ -21,7 +21,7 @@ export class PokedexComponent {
   ngOnInit(){
     this.pokemonService.getPokedex()
     .subscribe( pokemons =>{
-      this.pokemons = pokemons
+      this.pokemons = pokemons;
     });
   }
 
@@ -61,6 +61,7 @@ export class PokedexComponent {
     this.pokemonService.getPokemon(pokemon.id)
     .subscribe( (pokemon:PokemonDetails) =>{
       this.selectedPokemon = pokemon;
+      
       this.selectedPokemon.height /= 10;
       this.selectedPokemon.weight /= 10;
     });

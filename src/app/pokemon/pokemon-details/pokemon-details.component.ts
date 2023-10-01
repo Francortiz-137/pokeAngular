@@ -48,6 +48,8 @@ export class PokemonDetailsComponent {
       this.pokemonService.getPokemon(`${this.pokemon.id - 1}`)
         .subscribe( pokemon =>{
           this.pokemon = pokemon;
+          this.pokemon.height /= 10;
+          this.pokemon.weight /= 10;
           this.focusReset();
       });
   }
@@ -57,6 +59,8 @@ export class PokemonDetailsComponent {
       this.pokemonService.getPokemon(`${this.pokemon.id + 1}`)
         .subscribe( pokemon =>{
           this.pokemon = pokemon;
+          this.pokemon.height /= 10;
+          this.pokemon.weight /= 10;
           this.focusReset();
       });
   }
