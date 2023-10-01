@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { PokemonDetails } from '../interfaces/pokemon.interfaces';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducers';
@@ -14,11 +14,18 @@ export class PokemonDetailsComponent {
 
   @Input() pokemon?:PokemonDetails;
   pokeFav?: PokemonDetails;
+  @ViewChild('pokeSelected') pokeSelected!: ElementRef;
 
   constructor(private store: Store<AppState>, private pokemonService:PokemonService){
     this.store.select('pokeFav').subscribe( pokeFav => {
       this.pokeFav = pokeFav;
     });
+  }
+
+  ngAfterViewInit(): void {
+    console.log('Focusealo aaaaaaa');
+    
+    this.pokeSelected.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
   addFavorite(newFav:PokemonDetails){

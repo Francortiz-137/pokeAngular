@@ -61,14 +61,12 @@
                     <td><a href="#details"> {{poke.id}}</a></td>
                     <td><a href="#details"> <img [src]="poke.sprite" [alt]="poke.name" [ngStyle]="{'width':'75px'}"></a></td>
                     <td><a href="#details"> {{poke.name}}</a></td>
-                
-               
             </tr>
             <p *ngIf="(pokemons | filtro:page:search).length === 0"> No hay mas resultados</p>
         </tbody>
     </table>
     
-    <app-pokemon-details [pokemon]="selectedPokemon" *ngIf="selectedPokemon!==null"></app-pokemon-details>
+    <app-pokemon-details #pokemonDetails [pokemon]="selectedPokemon" *ngIf="selectedPokemon!==null"></app-pokemon-details>
     
 </section>
 <app-summary [pokes]="pokemons"></app-summary>

@@ -3,7 +3,7 @@
     background-color: #E64C3C;
     color: white;
     border-radius: 12px;
-    border: 1.5px solid black;
+    border: 2.5px solid #212529;
 }
 
 .card-header{
@@ -23,6 +23,8 @@
 .pokemon-types{
     list-style: none;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     gap: .5rem;
     padding: 0 2rem 1rem;
 }
@@ -34,11 +36,11 @@
 
 .pokedex-screen{
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     width: 90%;
     margin: auto;
-    background-color: black;
+    background-color: #0f1012;
     border-radius: 16px;
     height: 350px;
 }

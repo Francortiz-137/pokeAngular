@@ -1,10 +1,8 @@
 <article id="details" class="card poke-details">
-    <div class="card-header">
+    <div  #pokeSelected class="card-header">
         <p>
             <span># {{pokemon?.id}}</span>
-            
             {{pokemon?.name}}
-
             <i *ngIf="pokeFav?.id !== 0 && pokeFav?.id === pokemon?.id" (click)="removeFavorite()" class="fa-solid fa-star"></i>
             <i *ngIf="pokemon && (pokeFav?.id ===0 || pokeFav?.id !== pokemon?.id)" (click)="addFavorite(pokemon)" class="fa-regular fa-star"></i>
         </p>
@@ -26,7 +24,7 @@
         </button>
     </div>
     <div class="card-body pokedex-screen">
-        <img 
+        <img
         class="pokemon-img" 
         [src]="pokemon?.sprites?.front_default" 
         alt="{{pokemon?.name}}" 
