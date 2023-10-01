@@ -45,12 +45,12 @@ export class PokedexComponent {
 
   autoCompleteSearch(search:string){
     this.showSuggestions = true;
-    this.suggestions = this.pokemons.filter(poke => poke.name.includes(search.toLowerCase()));
+    this.suggestions = this.pokemons.filter(poke => poke.name.includes(search.toLowerCase().trim()));
   }
 
   searchPokemon(search:string){
     this.page = 0;
-    this.search = search.toLowerCase();
+    this.search = search.toLowerCase().trim();
   }
 
   selectSuggestion(pokemon:Pokemon){
