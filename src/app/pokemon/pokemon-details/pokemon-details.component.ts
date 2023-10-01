@@ -23,8 +23,6 @@ export class PokemonDetailsComponent {
   }
 
   ngAfterViewInit(): void {
-    console.log('Focusealo aaaaaaa');
-    
     this.pokeSelected.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 

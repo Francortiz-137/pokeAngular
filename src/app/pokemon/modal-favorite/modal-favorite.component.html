@@ -13,52 +13,79 @@
 		<div class="card-body">
             
             <hr>
-            <ul>
+            <div class="info-section">
                 <p>Habilidades: </p>
-                <li *ngFor="let ability of pokemon?.abilities">
-                    {{ ability?.ability?.name }}
-                    <hr>
-                </li>
-            </ul>
-            <ul>
+                <ul>
+                    <li *ngFor="let ability of pokemon?.abilities">
+                        <p>{{ ability?.ability?.name }}</p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-section">
                 <p>Formas: </p>
-                <li *ngFor="let form of pokemon?.forms">
-                    {{ form?.name }}
-                    <hr>
-                </li>
-            </ul>
-            <ul>
+                <ul>
+                    <li *ngFor="let form of pokemon?.forms">
+                        <p>{{ form?.name }}</p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="info-section">
                 <p>Juegos: </p>
-                <li *ngFor="let game of pokemon?.game_indices">
-                    {{ game?.version?.name }}
-                    <hr>
-                </li>
-            </ul>
-            <p>Altura: {{pokemon?.height}} m</p>
+                <ul>
+                    <li *ngFor="let game of pokemon?.game_indices">
+                        <p>{{ game?.version?.name }}</p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="info-section">
+                <p>Altura:</p>
+                <p>{{pokemon?.height}} m</p>
+            </div>
+            
             <hr>
-            <p>Peso: {{pokemon?.weight}} kg</p>
+            
+            <div class="info-section">
+                <p>Peso:</p>
+                <p>{{pokemon?.weight}} kg</p>
+            </div>
+            
             <hr>
-            <ul>
+            
+            <div class="info-section">
                 <p>Movimientos: </p>
-                <li *ngFor="let move of pokemon?.moves">
-                    {{ move?.move?.name }}
-                    <hr>
-                </li>
-            </ul>
-            <ul><!-- Widget sonar stats -->
+                <ul>
+                    <li *ngFor="let move of pokemon?.moves">
+                        <p>{{ move?.move?.name }}</p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+           
+            <div class="info-section">
                 <p>Estadisticas: </p>
-                <li *ngFor="let stat of pokemon?.stats">
-                    {{ stat?.stat?.name }}: {{stat?.base_stat}}
-                    <hr>
-                </li>
-            </ul>
-            <ul>
+                <ul>
+                    <li *ngFor="let stat of pokemon?.stats">
+                        <p>{{ stat?.stat?.name }}: {{stat?.base_stat}}</p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="info-section">
                 <p>Tipos: </p>
-                <li *ngFor="let type of pokemon?.types">
-                    {{ type?.type?.name }} 
-                    <hr>
-                </li>
-            </ul>
+                <ul>
+                    <li *ngFor="let type of pokemon?.types">
+                        <p>{{ type?.type?.name }} </p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+            
         </div>
 	</div>
 </div>

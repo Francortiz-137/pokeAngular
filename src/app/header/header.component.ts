@@ -12,14 +12,18 @@ import { ModalFavoriteComponent } from '../pokemon/modal-favorite/modal-favorite
 })
 export class HeaderComponent {
   pokeFav?: PokemonDetails;
-
+  closeResult: string = '';
+  @ViewChild('pokeFocus') pokeFocus!: ElementRef;
+  
   constructor(private store: Store<AppState>,private modalService: NgbModal){
     this.store.select('pokeFav').subscribe( pokeFav => {
       this.pokeFav = pokeFav;
     });
   }
 
-  closeResult: string = '';
+  focusFavorite(): void {
+    this.pokeFocus.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 
   openModalDetails() {
 

@@ -9,7 +9,7 @@
             <p >Selecciona un pokemon como favorito!</p>
         </div>
        
-        <div class="favorite favorite-active" *ngIf="pokeFav?.id !== 0" (click)="openModalDetails()">
+        <div #pokeFocus class="favorite favorite-active" *ngIf="pokeFav?.id !== 0" (click)="openModalDetails()">
             <i class="fa-solid fa-star"></i>
             <p>{{ pokeFav?.name}}</p>
             <img

@@ -1,5 +1,18 @@
 
-
-/* Hacer header fijo para poder cerrarlo cuando quiera en mobile */
 /* Hacer la lista scrolleable */
 /* Corregir tamanio fuente */
+
+p{
+    font-size: 1.6rem;
+}
+
+.info-section{
+    max-height: 150px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scroll-item{
+    flex: 1;
+}
