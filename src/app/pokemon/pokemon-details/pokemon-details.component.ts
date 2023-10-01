@@ -23,7 +23,11 @@ export class PokemonDetailsComponent {
   }
 
   ngAfterViewInit(): void {
-    this.focusReset();
+    if(this.pokemon?.id !== 0){
+      this.focusReset();
+      console.log("scroleando")
+    }
+      
   }
 
   focusReset(){

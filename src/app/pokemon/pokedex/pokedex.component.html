@@ -66,7 +66,7 @@
         </tbody>
     </table>
     
-    <app-pokemon-details #pokemonDetails [pokemon]="selectedPokemon" *ngIf="selectedPokemon!==null"></app-pokemon-details>
+    <app-pokemon-details class="poke-details" #pokemonDetails [pokemon]="selectedPokemon" *ngIf="selectedPokemon!==null"></app-pokemon-details>
     
 </section>
 <app-summary [pokes]="pokemons"></app-summary>

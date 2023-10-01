@@ -51,9 +51,6 @@
     position: relative;
 }
 
-
-
-
 .icon-favorite{
     font-size: 3rem;
 }
@@ -69,6 +66,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     text-transform: uppercase;
     padding: 1rem 2rem;
 }
@@ -99,7 +97,8 @@
 
 .pokedex-screen .pokemon-img{
     background-color: white;
-    height: min(300px,90%);
+    width: min(90%,300px);
+    max-height: 100%;
     border-radius: 18px;
 }
 
@@ -174,11 +173,17 @@ h6{
     background-color: #5e1a1a;
   }
 
+
 @media (min-width: 769px) {
     
     .poke-details{
         
         width: max(500px,40vw);
+    }
+
+    .pokedex-screen .pokemon-img{
+        height: min(300px,90%);
+        width: auto;
     }
 }
 
