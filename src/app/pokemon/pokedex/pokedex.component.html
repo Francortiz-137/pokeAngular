@@ -58,9 +58,9 @@
         <tbody>
             <tr  (click)="selectPokemon(poke)" *ngFor="let poke of pokemons | filtro:page:search">
                 
-                    <td><a href="#details"> {{poke.id}}</a></td>
-                    <td><a href="#details"> <img [src]="poke.sprite" [alt]="poke.name" [ngStyle]="{'width':'75px'}"></a></td>
-                    <td><a href="#details"> {{poke.name}}</a></td>
+                    <td> <p>{{poke.id}}</p></td>
+                    <td> <img [src]="poke.sprite" [alt]="poke.name" [ngStyle]="{'width':'75px'}"></td>
+                    <td> <p>{{poke.name}}</p> </td>
             </tr>
             <p *ngIf="(pokemons | filtro:page:search).length === 0"> No hay mas resultados</p>
         </tbody>

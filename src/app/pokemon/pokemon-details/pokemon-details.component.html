@@ -1,11 +1,20 @@
-<article id="details" class="card poke-details">
+<article class="card poke-details">
     <div #pokeSelected class="card-header">
-        <p>
-            <span># {{pokemon?.id}}</span>
-            {{pokemon?.name}}
-            <i *ngIf="pokeFav?.id !== 0 && pokeFav?.id === pokemon?.id" (click)="removeFavorite()" class="fa-solid fa-star"></i>
-            <i *ngIf="pokemon && (pokeFav?.id ===0 || pokeFav?.id !== pokemon?.id)" (click)="addFavorite(pokemon)" class="fa-regular fa-star"></i>
-        </p>
+        
+        <div>
+            <div class="lights">
+                <span class="fa-regular fa-circle pokedex-lights"></span>
+                <span class="fa-regular fa-circle pokedex-lights-1"></span>
+                <span class="fa-regular fa-circle pokedex-lights-2"></span>
+                <span class="fa-regular fa-circle pokedex-lights-3"></span>
+            </div>
+            <p>
+                <span># {{pokemon?.id}} {{pokemon?.name}}</span>
+            </p>
+            <i *ngIf="pokeFav?.id !== 0 && pokeFav?.id === pokemon?.id" (click)="removeFavorite()" class="fa-solid fa-star icon-favorite"></i>
+            <i *ngIf="pokemon && (pokeFav?.id ===0 || pokeFav?.id !== pokemon?.id)" (click)="addFavorite(pokemon)" class="fa-regular fa-star icon-favorite"></i>
+           
+             </div>
 
         <ul class="pokemon-types">
             <li *ngFor="let type of pokemon?.types">
@@ -34,13 +43,13 @@
     <div class="card-body">
         <div class="poke-info">
             <div class="scroll">
-                <p class="scroll-item">Altura:</p>
+                <h6 class="scroll-item">Altura:</h6>
                 <p class="scroll-item">{{pokemon?.height}} m</p>
             </div>
           
             <hr>
             <div class="scroll">
-                <p class="scroll-item">Peso:</p>
+                <h6 class="scroll-item">Peso:</h6>
                 <p class="scroll-item">{{pokemon?.weight}} kg</p>
             </div>
             

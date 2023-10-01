@@ -23,6 +23,10 @@ export class PokemonDetailsComponent {
   }
 
   ngAfterViewInit(): void {
+    this.focusReset();
+  }
+
+  focusReset(){
     this.pokeSelected.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -39,7 +43,8 @@ export class PokemonDetailsComponent {
     if(this.pokemon && this.pokemon.id > 1)
       this.pokemonService.getPokemon(`${this.pokemon.id - 1}`)
         .subscribe( pokemon =>{
-          this.pokemon = pokemon
+          this.pokemon = pokemon;
+          this.focusReset();
       });
   }
 
@@ -48,6 +53,7 @@ export class PokemonDetailsComponent {
       this.pokemonService.getPokemon(`${this.pokemon.id + 1}`)
         .subscribe( pokemon =>{
           this.pokemon = pokemon;
+          this.focusReset();
       });
   }
 }
