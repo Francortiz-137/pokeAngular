@@ -13,12 +13,17 @@ h2{
     text-align: center;
 }
 
-
-
 thead{
     font-size: 1.6rem;
 }
 
+tr{
+    cursor: pointer;
+}
+
+tr:hover{
+    opacity: 0.5;
+}
 
 a{
     text-decoration: none;

@@ -20,20 +20,24 @@
 
     <div class="pag-buttons">
 
-        <button class="btn btn-primary" (click)="firstPage()">
+        <button *ngIf="this.page > 0" class="btn btn-primary" (click)="firstPage()">
             &lt;&lt; Inicio
         </button>
 
-        <button class="btn btn-primary" (click)="prevPage()">
+        <button *ngIf="this.page > 0" class="btn btn-primary" (click)="prevPage()">
             &lt; Prev
         </button>
 
-        <button class="btn btn-primary"  (click)="nextPage()"
-            [disabled]="(pokemons | filtro:page:search).length === 0">
+        <button *ngIf="this.page < this.pokemons.length - 10" 
+                class="btn btn-primary" 
+                (click)="nextPage()"
+                [disabled]="(pokemons | filtro:page:search).length === 0">
             Sig &gt;
         </button>
 
-        <button class="btn btn-primary" (click)="lastPage()">
+        <button *ngIf="this.page < this.pokemons.length - 10"
+                class="btn btn-primary" 
+                (click)="lastPage()">
             Final &gt;&gt;
         </button>
 
