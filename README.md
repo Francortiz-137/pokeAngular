@@ -24,7 +24,7 @@ PokeAngular es una aplicación Angular que permite explorar y administrar inform
 - Angular CLI: 16.2.3
 - Node: 18.18.0
 - Package Manager: npm 10.1.0
-- OS: win32 x64
+- OS: Windows 10 x64
 - Bootstrap para estilos y componentes CSS.
 - FontAwesome para iconos
 - ng-bootstrap para el manejo del dialog/modal
